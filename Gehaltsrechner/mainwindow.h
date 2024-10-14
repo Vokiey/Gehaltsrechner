@@ -20,6 +20,8 @@ public:
 private slots:
     void on_lineEdit_income_textEdited(const QString &arg1);
 
+    void on_RadioButtonToggled(bool checked);
+
 private:
     Ui::MainWindow *ui;
     Gehalt* m_gehalt;

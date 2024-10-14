@@ -553,6 +553,8 @@ Gehaltsrechner_autogen/timestamp: \
 	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeRCCompiler.cmake \
 	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/CMakeFiles/3.29.3/CMakeSystem.cmake \
 	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/Gehaltsrechner_autogen/moc_predefs.h \
+	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/bundesland.cpp \
+	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/bundesland.h \
 	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/gehalt.cpp \
 	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/gehalt.h \
 	D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/main.cpp \
