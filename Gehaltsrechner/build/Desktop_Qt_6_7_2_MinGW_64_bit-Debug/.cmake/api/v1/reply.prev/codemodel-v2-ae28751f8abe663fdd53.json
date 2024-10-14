@@ -1,0 +1,79 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-8f7bab995f4737f25e2d.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Gehaltsrechner",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "Gehaltsrechner::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Gehaltsrechner-Debug-c75ce80ac61737ad1fbe.json",
+					"name" : "Gehaltsrechner",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Gehaltsrechner_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Gehaltsrechner_autogen-Debug-e1ecbb605ce4924932fc.json",
+					"name" : "Gehaltsrechner_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "Gehaltsrechner_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-Gehaltsrechner_autogen_timestamp_deps-Debug-bb82a3e6d8aa35e1e1c8.json",
+					"name" : "Gehaltsrechner_autogen_timestamp_deps",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug",
+		"source" : "D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}
