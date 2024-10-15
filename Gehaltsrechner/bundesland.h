@@ -14,5 +14,6 @@ public:
     QString Get_name();
     int Get_multiplyer();
 };
+extern Bundesland *lands[];
 
 #endif // BUNDESLAND_H

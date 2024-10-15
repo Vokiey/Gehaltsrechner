@@ -18,9 +18,17 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_lineEdit_income_textEdited(const QString &arg1);
+    //most important is this one
+    //every time any value is changed
+    void onValueChanged();
 
-    void on_RadioButtonToggled(bool checked);
+    // void on_lineEdit_income_textEdited(const QString &arg1);
+
+    // void on_RadioButtonToggled(bool checked);
+
+    // void on_comboBox_states_currentIndexChanged(int index);
+
+    // void on_checkBox_churchTax_checkStateChanged(const Qt::CheckState &arg1);
 
 private:
     Ui::MainWindow *ui;

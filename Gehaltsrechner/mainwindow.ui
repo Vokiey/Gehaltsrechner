@@ -133,9 +133,9 @@
     <widget class="QComboBox" name="comboBox_states">
      <property name="geometry">
       <rect>
-       <x>10</x>
+       <x>0</x>
        <y>170</y>
-       <width>241</width>
+       <width>301</width>
        <height>24</height>
       </rect>
      </property>
@@ -211,7 +211,7 @@
       <string>Krankenversicherung</string>
      </property>
     </widget>
-    <widget class="QDoubleSpinBox" name="doubleSpinBox_kirchenfreibetrag">
+    <widget class="QDoubleSpinBox" name="doubleSpinBox_kinderfreibetrag">
      <property name="geometry">
       <rect>
        <x>10</x>

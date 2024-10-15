@@ -8,34 +8,35 @@ class Gehalt
 private:
     //all important variables for calculation
     double m_bruttoGehalt;
-    double m_nettoGehalt;
+    //bundesland multipl
+    bool m_isMonthly;
+    int m_steuerklasse;
     double m_kinderfreibetrag;
+    bool m_kirchensteuer;
+    bool m_isGesetzlich;
     double m_beitrragssatz;
-    bool   m_kirchensteuer = false;
+    double m_beitragssart;
 
+    double m_nettoGehalt;
 
 
 public:
     Gehalt();
     //all setters
     void set_bruttoGehalt(double eingabe_brutto);
-    void set_kinderfreibetrag(double eingabe_kinderfreibetrag);
-    void set_kirchensteuer(double eingabe_kirchensteuer);
-    void set_beitrragssatz(double eingabe_beitrragssatz);
+    void set_isMonthly(bool input_isMonthly);
+    void set_steuerklasse(int input_steuerklasse);
+    void set_kinderfreibetrag(double input_kinderfreibetrag);
+    void set_kirchensteuer(double input_kirchensteuer);
+    void set_isGesetzlich(bool input_isGesetzlich);
+    void set_beitrragssatz(double input_beitrragssatz);
 
-    // --> return nettoGehalt
-    double calcNetto(double brutto);
 
-    // struct Lands
-    // {
-    //     QString name;
-    //     int modificator;
-    //     Lands(QString& name, int modificator) : name(name), modificator(modificator) {}
-    // };
 
-    // std::vector <Lands> lands{
-    //     Lands("3sdf", 1);
-    // }
+
+    // --> change nettoGehalt and all info in textfield
+    double calcNetto();
+
 
 
 
