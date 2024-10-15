@@ -11,6 +11,11 @@ void Gehalt::set_isMonthly(bool input_isMonthly)
     m_isMonthly = input_isMonthly;
 }
 
+void Gehalt::set_multiplyer(double input_multiplyer)
+{
+    m_multiplyer = input_multiplyer;
+}
+
 void Gehalt::set_steuerklasse(int input_steuerklasse)
 {
     m_steuerklasse = input_steuerklasse;
@@ -26,10 +31,7 @@ void Gehalt::set_kirchensteuer(double input_kirchensteuer)
     m_kirchensteuer = input_kirchensteuer;
 }
 
-void Gehalt::set_isGesetzlich(bool input_isGesetzlich)
-{
-    m_isGesetzlich = input_isGesetzlich;
-}
+
 
 void Gehalt::set_beitrragssatz(double input_beitrragssatz)
 {
