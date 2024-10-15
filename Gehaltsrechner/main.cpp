@@ -10,5 +10,6 @@ int main(int argc, char *argv[])
     MainWindow w(&g);
     w.setWindowTitle("Gegaltsrechner :-)");
     w.show();
+
     return a.exec();
 }

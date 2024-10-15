@@ -62,7 +62,7 @@
    <widget class="QGroupBox" name="groupBox_2">
     <property name="geometry">
      <rect>
-      <x>50</x>
+      <x>60</x>
       <y>30</y>
       <width>301</width>
       <height>501</height>
@@ -128,32 +128,6 @@
      </property>
      <property name="text">
       <string>Zeitraum</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_monthly">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>120</y>
-       <width>91</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Monatlich</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_yearly">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>120</y>
-       <width>91</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Jährlich</string>
      </property>
     </widget>
     <widget class="QComboBox" name="comboBox_states">
@@ -247,32 +221,6 @@
       </rect>
      </property>
     </widget>
-    <widget class="QRadioButton" name="radioButton_gesetzlich">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>390</y>
-       <width>91</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Gesetzlich</string>
-     </property>
-    </widget>
-    <widget class="QRadioButton" name="radioButton_private">
-     <property name="geometry">
-      <rect>
-       <x>120</x>
-       <y>390</y>
-       <width>91</width>
-       <height>22</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>Privat</string>
-     </property>
-    </widget>
     <widget class="QDoubleSpinBox" name="doubleSpinBox_beitrragssatz">
      <property name="geometry">
       <rect>
@@ -342,7 +290,7 @@
        </widget>
       </item>
       <item>
-       <widget class="QRadioButton" name="radioButton_6">
+       <widget class="QRadioButton" name="radioButton_SK6">
         <property name="text">
          <string>6</string>
         </property>
@@ -362,6 +310,58 @@
      <property name="text">
       <string>Kirchensteuer</string>
      </property>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>120</y>
+       <width>152</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QRadioButton" name="radioButton_monthly">
+        <property name="text">
+         <string>Monatlich</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_yearly">
+        <property name="text">
+         <string>Jährlich</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>390</y>
+       <width>141</width>
+       <height>24</height>
+      </rect>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_3">
+      <item>
+       <widget class="QRadioButton" name="radioButton_gesetzlich">
+        <property name="text">
+         <string>Gesetzlich</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QRadioButton" name="radioButton_private">
+        <property name="text">
+         <string>Privat</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
   </widget>
