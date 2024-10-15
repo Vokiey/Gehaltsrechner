@@ -8,14 +8,14 @@ class Gehalt
 private:
     //all important variables for calculation
     double m_bruttoGehalt;
-    //bundesland multipl
     bool m_isMonthly;
+    double m_multiplyer;
     int m_steuerklasse;
     double m_kinderfreibetrag;
     bool m_kirchensteuer;
     bool m_isGesetzlich;
     double m_beitrragssatz;
-    double m_beitragssart;
+
 
     double m_nettoGehalt;
 
@@ -25,6 +25,7 @@ public:
     //all setters
     void set_bruttoGehalt(double eingabe_brutto);
     void set_isMonthly(bool input_isMonthly);
+    void set_multiplyer(double input_multiplyer);
     void set_steuerklasse(int input_steuerklasse);
     void set_kinderfreibetrag(double input_kinderfreibetrag);
     void set_kirchensteuer(double input_kirchensteuer);

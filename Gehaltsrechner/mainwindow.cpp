@@ -14,28 +14,33 @@ MainWindow::MainWindow(Gehalt* gehalt, QWidget *parent) :
     ui->setupUi(this);
 
     //connect all items to a ifValueChanged function
-    connect(ui->lineEdit_income, &QLineEdit::textEdited, this, &MainWindow::onValueChanged); // lineEdit
 
+    // lineEdit
+    connect(ui->lineEdit_income, &QLineEdit::textEdited, this, &MainWindow::onValueChanged);
+    //radiobuttons
     connect(ui->radioButton_monthly, &QRadioButton::clicked, this, &MainWindow::onValueChanged);//radiobuttons
     connect(ui->radioButton_yearly, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
+    //combo
+    connect(ui->comboBox_states, &QComboBox::currentIndexChanged, this, &MainWindow::onValueChanged);
+    //radiobuttons
+    connect(ui->radioButton_SK1, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
 
-    connect(ui->comboBox_states, &QComboBox::currentIndexChanged, this, &MainWindow::onValueChanged);   //combo
+    ui->buttonGroup->setId(ui->radioButton_SK1, 1);
 
-    connect(ui->radioButton_SK1, &QRadioButton::clicked, this, &MainWindow::onValueChanged); //radiobuttons
     connect(ui->radioButton_SK2, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     connect(ui->radioButton_SK3, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     connect(ui->radioButton_SK4, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     connect(ui->radioButton_SK5, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     connect(ui->radioButton_SK6, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
-
-    connect(ui->checkBox_churchTax, &QCheckBox::clicked, this, &MainWindow::onValueChanged); //checkbox
-
-    connect(ui->doubleSpinBox_kinderfreibetrag, &QDoubleSpinBox::valueChanged, this, &MainWindow::onValueChanged); //doubleSpinBox
-
-    connect(ui->radioButton_gesetzlich, &QRadioButton::clicked, this, &MainWindow::onValueChanged); //radiobuttons
+    //checkbox
+    connect(ui->checkBox_churchTax, &QCheckBox::clicked, this, &MainWindow::onValueChanged);
+    //doubleSpinBox
+    connect(ui->doubleSpinBox_kinderfreibetrag, &QDoubleSpinBox::valueChanged, this, &MainWindow::onValueChanged);
+    //radiobuttons
+    connect(ui->radioButton_gesetzlich, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     connect(ui->radioButton_private, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
-
-    connect(ui->doubleSpinBox_beitrragssatz, &QDoubleSpinBox::valueChanged, this, &MainWindow::onValueChanged); //doubleSpinBox
+    //doubleSpinBox
+    connect(ui->doubleSpinBox_beitrragssatz, &QDoubleSpinBox::valueChanged, this, &MainWindow::onValueChanged);
 
 
     //by default checked radiobuttons
@@ -73,10 +78,41 @@ MainWindow::~MainWindow()
 //main function I think
 void MainWindow::onValueChanged()
 {
+    //only for debugging
     double brutto = ui->lineEdit_income->text().toDouble();
-    //add all values in object
-    m_gehalt->set_bruttoGehalt(brutto);
+    qDebug()<<"brutto    "<<brutto;
 
+    bool isMonthly = ui->radioButton_monthly->isChecked();
+    qDebug()<<"isMonthly?    "<<isMonthly;
+
+    double multiplyer = ui->comboBox_states->itemData(ui->comboBox_states->currentIndex()).toDouble();
+    qDebug()<<"multiplyer   "<<multiplyer;
+
+    int steuerklasse = ui->buttonGroup->checkedButton()->text().toInt();
+    qDebug()<<"steuerklasse     "<<steuerklasse;
+
+    double kinderfreibetrag = ui->doubleSpinBox_kinderfreibetrag->value();
+    qDebug()<<"kinderfreibetrag     "<<kinderfreibetrag;
+
+    bool kirchensteuer = ui->checkBox_churchTax->isChecked();
+    qDebug()<<"kirchensteuer    "<<kirchensteuer;
+
+    bool isGesetzlich = ui->radioButton_gesetzlich->isChecked();
+    qDebug()<<"isGesetzlich     "<<isGesetzlich;
+
+    double beitrragssatz = ui->doubleSpinBox_beitrragssatz->value();
+    qDebug()<<"beitrragssatz     "<<beitrragssatz;
+
+
+    //add all values in object
+    m_gehalt->set_bruttoGehalt(ui->lineEdit_income->text().toDouble());
+    m_gehalt->set_isMonthly(ui->radioButton_monthly->isChecked());
+    m_gehalt->set_multiplyer(ui->comboBox_states->itemData(ui->comboBox_states->currentIndex()).toDouble());
+    m_gehalt->set_steuerklasse(ui->buttonGroup->checkedButton()->text().toInt());
+    m_gehalt->set_kinderfreibetrag(ui->doubleSpinBox_kinderfreibetrag->value());
+    m_gehalt->set_kirchensteuer(ui->checkBox_churchTax->isChecked());
+    m_gehalt->set_isGesetzlich(ui->radioButton_gesetzlich->isChecked());
+    m_gehalt->set_beitrragssatz(ui->doubleSpinBox_beitrragssatz->value());
 
     //call function
 
