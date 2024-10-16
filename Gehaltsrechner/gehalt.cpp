@@ -1,44 +1,55 @@
 #include "gehalt.h"
+#include <QDebug>
 
-Gehalt::Gehalt() {}
-
-void Gehalt::set_bruttoGehalt(double eingabe_brutto){
-    m_bruttoGehalt = eingabe_brutto;
+double Gehalt::calcRentenversicherung()
+{
+    //9.3% von Brutto
+    m_rentenversicherung = m_bruttoGehalt * 0.093;
+    qDebug()<<"m_rentenversicherung     "<<m_rentenversicherung;
+    return m_rentenversicherung;
 }
 
-void Gehalt::set_isMonthly(bool input_isMonthly)
+double Gehalt::calcArbeitslosenversicherung()
 {
-    m_isMonthly = input_isMonthly;
+    //1.3% von Brutto
+    m_arbeitslosenversicherung = m_bruttoGehalt * 0.013;
+    qDebug()<<"m_arbeitslosenversicherung     "<<m_arbeitslosenversicherung;
+    return m_arbeitslosenversicherung;
 }
 
-void Gehalt::set_multiplyer(double input_multiplyer)
+double Gehalt::calcPflegeversicherung()
 {
-    m_multiplyer = input_multiplyer;
+    //1.7% von Brutto
+    m_pflegeversicherung = m_bruttoGehalt * 0.017;
+    qDebug()<<"m_pflegeversicherung     "<<m_pflegeversicherung;
+    return m_pflegeversicherung;
 }
 
-void Gehalt::set_steuerklasse(int input_steuerklasse)
+double Gehalt::calcKrankenversicherung()
 {
-    m_steuerklasse = input_steuerklasse;
-}
-
-void Gehalt::set_kinderfreibetrag(double input_kinderfreibetrag)
-{
-    m_kinderfreibetrag = input_kinderfreibetrag;
-}
-
-void Gehalt::set_kirchensteuer(double input_kirchensteuer)
-{
-    m_kirchensteuer = input_kirchensteuer;
+    //ca. 14.6-18% von Brutto
+    m_krankenversicherung = m_bruttoGehalt * m_beitrragssatz / 2 / 100 ;
+    qDebug()<<"m_krankenversicherung     "<<m_krankenversicherung;
+    return m_krankenversicherung;
 }
 
 
-
-void Gehalt::set_beitrragssatz(double input_beitrragssatz)
+double Gehalt::calcAbgaben()
 {
-    m_beitrragssatz = input_beitrragssatz;
+    m_sozialabgabenSum = calcRentenversicherung()
+    + calcArbeitslosenversicherung()
+    + calcPflegeversicherung()
+    + calcKrankenversicherung();
+
+    qDebug()<<"m_sozialabgabenSum       "<<m_sozialabgabenSum<<"\n";
+    return m_sozialabgabenSum;
 }
 
-double Gehalt::calcNetto()
+double Gehalt::calcNettoLohn()
 {
+
     return 0;
 }
+
+
+

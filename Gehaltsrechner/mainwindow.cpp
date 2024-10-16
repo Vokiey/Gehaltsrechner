@@ -16,9 +16,9 @@ MainWindow::MainWindow(Gehalt* gehalt, QWidget *parent) :
     //connect all items to a ifValueChanged function
 
     // lineEdit
-    connect(ui->lineEdit_income, &QLineEdit::textEdited, this, &MainWindow::onValueChanged);
+    connect(ui->doubleSpinBox_income, &QDoubleSpinBox::valueChanged, this, &MainWindow::onValueChanged);
     //radiobuttons
-    connect(ui->radioButton_monthly, &QRadioButton::clicked, this, &MainWindow::onValueChanged);//radiobuttons
+    connect(ui->radioButton_monthly, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     connect(ui->radioButton_yearly, &QRadioButton::clicked, this, &MainWindow::onValueChanged);
     //combo
     connect(ui->comboBox_states, &QComboBox::currentIndexChanged, this, &MainWindow::onValueChanged);
@@ -43,6 +43,11 @@ MainWindow::MainWindow(Gehalt* gehalt, QWidget *parent) :
     connect(ui->doubleSpinBox_beitrragssatz, &QDoubleSpinBox::valueChanged, this, &MainWindow::onValueChanged);
 
 
+    // //default value for income
+    ui->doubleSpinBox_income->setPrefix("€ ");
+    ui->doubleSpinBox_income->setSingleStep(250);
+    ui->doubleSpinBox_income->setRange(0, 9999999999);
+
     //by default checked radiobuttons
     ui->radioButton_gesetzlich->setChecked(true);
     ui->radioButton_monthly->setChecked(true);
@@ -55,6 +60,7 @@ MainWindow::MainWindow(Gehalt* gehalt, QWidget *parent) :
     ui->doubleSpinBox_kinderfreibetrag->setValue(1);
 
     //default value for Betreigssatz
+    ui->doubleSpinBox_beitrragssatz->setPrefix("% ");
     ui->doubleSpinBox_beitrragssatz->setDecimals(1);
     ui->doubleSpinBox_beitrragssatz->setSingleStep(0.1);
     ui->doubleSpinBox_beitrragssatz->setRange(14.6, 18);
@@ -79,7 +85,7 @@ MainWindow::~MainWindow()
 void MainWindow::onValueChanged()
 {
     //only for debugging
-    double brutto = ui->lineEdit_income->text().toDouble();
+    double brutto = ui->doubleSpinBox_income->value();
     qDebug()<<"brutto    "<<brutto;
 
     bool isMonthly = ui->radioButton_monthly->isChecked();
@@ -105,7 +111,7 @@ void MainWindow::onValueChanged()
 
 
     //add all values in object
-    m_gehalt->set_bruttoGehalt(ui->lineEdit_income->text().toDouble());
+    m_gehalt->set_bruttoGehalt(ui->doubleSpinBox_income->value());
     m_gehalt->set_isMonthly(ui->radioButton_monthly->isChecked());
     m_gehalt->set_multiplyer(ui->comboBox_states->itemData(ui->comboBox_states->currentIndex()).toDouble());
     m_gehalt->set_steuerklasse(ui->buttonGroup->checkedButton()->text().toInt());
@@ -115,8 +121,23 @@ void MainWindow::onValueChanged()
     m_gehalt->set_beitrragssatz(ui->doubleSpinBox_beitrragssatz->value());
 
     //call function
+    if (m_gehalt->get_bruttoGehalt() != 0)
+        fillTextFields();
 
     qDebug()<<"Something was changed lol\n";
+}
+
+void MainWindow::fillTextFields(){
+    m_gehalt->calcAbgaben();
+
+    // ui->lineEdit_sozialabgaben->setText(QString::number(m_gehalt->m_));
+    // ui->lineEdit_rentenversicherung->setText(QString::number(m_gehalt->()));
+    // ui->lineEdit_sozialabgaben->setText(QString::number(m_gehalt->calcAbgaben()));
+    // ui->lineEdit_sozialabgaben->setText(QString::number(m_gehalt->calcAbgaben()));
+
+
+
+
 }
 
     // if edited then start a noname Funktion

@@ -16,7 +16,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(Gehalt* gehalt, QWidget *parent = nullptr);
     ~MainWindow();
-
+    void fillTextFields();
 private slots:
     //most important is this one
     //every time any value is changed

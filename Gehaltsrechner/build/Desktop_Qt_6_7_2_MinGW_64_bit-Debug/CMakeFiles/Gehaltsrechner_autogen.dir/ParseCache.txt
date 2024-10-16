@@ -656,8 +656,8 @@ D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/mainwindow.h
  mdp:D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/gehalt.h
  mdp:D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/mainwindow.h
 D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/gehalt.cpp
-D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/main.cpp
 D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/gui.cpp
+D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/main.cpp
 D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/mainwindow.cpp
  uic:./ui_mainwindow.h
 D:/projekte/Brutto-Netto_Rechner/Gehaltsrechner/bundesland.h
